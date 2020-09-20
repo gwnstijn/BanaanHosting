@@ -65,6 +65,6 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.help = {
     name: "sps",
-    description: "",
-    category: ""
+    description: "speel steen papier schaar",
+    category: "algemeen"
 }
