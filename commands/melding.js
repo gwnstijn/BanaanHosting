@@ -2,7 +2,7 @@ const discord = require("discord.js");
  
 module.exports.run = async (client, message, args) => {
  
-    // !announcement titel | bericht | kleur | kanaal.
+    // !announcement titel | bericht
  
     if (!message.member.hasPermission("KICK_MEMBERS")) return message.reply("you cannot do this");
  
@@ -10,10 +10,10 @@ module.exports.run = async (client, message, args) => {
  
     if (args[0] == null) {
         var embed = new discord.MessageEmbed()
-            .setTitle(":books: Usage")
+            .setTitle(":books: Hoe gebruik je het?")
             .setColor("#0099ff")
-            .setDescription(`Make a announcement using: \n !announcement title ${seperator} message ${seperator} channel`)
-            .setFooter('BanaanHosting » Coded By: Stijn Jakobs');
+            .setDescription(`Make a announcement using: \n !announcement title ${seperator} message`)
+            .setFooter('BanaanHosting');
  
         return message.reply(embed);
     }
@@ -29,7 +29,6 @@ module.exports.run = async (client, message, args) => {
  
         titel: argsList[0],
         bericht: argsList[1] || "No content specified",
-        kanaal: argsList[2].trim()
  
     }
  
@@ -42,7 +41,7 @@ module.exports.run = async (client, message, args) => {
         .setTimestamp()
         .setFooter('BanaanHosting');
  
-    var channel = message.member.guild.channels.cache.find(channel => channel.name === options.kanaal);
+    var channel = message.member.guild.channels.cache.find(channel => => channel.name == "『📌』meldingen").send(embed);
     if (!channel) return message.reply("Channel does not exist");
  
     channel.send(announceEmbed);
@@ -50,5 +49,5 @@ module.exports.run = async (client, message, args) => {
 }
  
 module.exports.help = {
-    name: "announcement"
+    name: "melding"
 }
