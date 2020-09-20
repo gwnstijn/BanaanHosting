@@ -41,7 +41,7 @@ module.exports.run = async (client, message, args) => {
         .setTimestamp()
         .setFooter('BanaanHosting');
  
-    var channel = message.member.guild.channels.cache.find(channel => => channel.name == "『📌』meldingen").send(embed);
+    var channel = message.member.guild.channels.cache.find(channel => channel.name == "『📌』meldingen").send(embed);
     if (!channel) return message.reply("Channel does not exist");
  
     channel.send(announceEmbed);
