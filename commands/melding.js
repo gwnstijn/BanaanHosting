@@ -12,7 +12,7 @@ module.exports.run = async (client, message, args) => {
         var embed = new discord.MessageEmbed()
             .setTitle(":books: Hoe gebruik je het?")
             .setColor("#0099ff")
-            .setDescription(`Make a announcement using: \n !announcement title ${seperator} message`)
+            .setDescription(`Make a announcement using: \n !announcement title ${seperator} message ${seperator} channel`)
             .setFooter('BanaanHosting');
  
         return message.reply(embed);
