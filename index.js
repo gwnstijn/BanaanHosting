@@ -110,25 +110,6 @@ client.on("ready", async () => {
 
 });
 
-client.on("messageDelete", messageDeleted => {
-
-    if (messageDeleted.author.bot) return;
-
-    var content = messageDeleted.content;
-    if (!content) content = "Geen tekst te vinden";
-
-    var respone = `Bericht ${messageDeleted.id} is verwijderd uit ${messageDeleted.channel}\n **Bericht:** ${content}`;
-
-    var embed = new discord.MessageEmbed()
-        .setAuthor(`${messageDeleted.author.id} ${messageDeleted.author.tag}`, `${messageDeleted.author.avatarURL({ size: 4096 })}`)
-        .setDescription(respone)
-        .setTimestamp()
-        .setColor("#FF0000");
-
-    client.channels.cache.find(c => c.name == "『💼』logs").send(embed);
-
-});
-
 // var swearWords = ["koe", "kalf", "varken"];
 
 client.on("message", async message => {
